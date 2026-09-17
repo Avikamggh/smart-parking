@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKYSTACK | Smart Campus Parking & Cloud Intelligence</title>
+  <meta name="description" content="SKYSTACK Smart Parking — Real-time parking visibility and peak-hour intelligence for university campuses. Built for Cloud Wars University Hackathon (Final Round).">
+  
+  <!-- Modern Typography Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;850&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Futuristic Background Mesh Overlay -->
+  <div class="bg-mesh-overlay" aria-hidden="true"></div>
+
+  <!-- SITE HEADER / NAVIGATION -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="brand-wrapper">
+        <div class="brand-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="4"></rect>
+            <path d="M9 17V7h4a3 3 0 0 1 0 6H9"></path>
+          </svg>
+        </div>
+        <div class="brand-title">
+          <span>SKYSTACK</span>
+          <span class="brand-badge">Cloud Wars Finalist</span>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="nav-links">
+        <li><a href="#overview" class="nav-link active">Overview</a></li>
+        <li><a href="#problem" class="nav-link">Problem</a></li>
+        <li><a href="#solution" class="nav-link">Solution</a></li>
+        <li><a href="#architecture" class="nav-link">Architecture</a></li>
+        <li><a href="#demo" class="nav-link">Live Dashboard</a></li>
+        <li><a href="#analytics" class="nav-link">Prediction</a></li>
+        <li><a href="#team" class="nav-link">Team</a></li>
+      </ul>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <div class="iot-status-pill" title="Live AWS IoT Core Connectivity">
+          <span class="status-dot-pulse"></span>
+          <span>AWS IOT: LIVE</span>
+        </div>
+        <button id="soundToggleBtn" class="btn-sound-toggle" title="Toggle audio feedback" aria-label="Toggle Sound">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+        </button>
+        <a href="#demo" class="btn-primary">Launch Demo</a>
+      </div>
+
+      <!-- Mobile Nav Button -->
+      <button class="mobile-nav-btn" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section id="overview" class="hero-section">
+      <div class="container hero-grid">
+        
+        <div class="hero-content">
+          <div class="event-tag">
+            <span class="event-dot"></span>
+            <span>Cloud Wars University Hackathon • Final Round</span>
+          </div>
+
+          <h1 class="hero-title">
+            SKYSTACK — <br>
+            <span class="text-gradient-cyan">Smart Parking</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Real-time parking visibility + peak-hour intelligence
+          </p>
+
+          <p class="hero-description">
+            A cloud-native campus parking intelligence layer that eliminates cruising time, reduces peak congestion, and provides live visibility across all campus parking zones.
+          </p>
+
+          <!-- Key CTA buttons -->
+          <div class="hero-cta-group">
+            <a href="#architecture" class="btn-aws">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4 0-2.05 1.53-3.76 3.56-3.97l1.07-.11.5-.95C8.08 7.14 9.94 6 12 6c2.62 0 4.88 1.86 5.39 4.43l.3 1.5 1.53.11c1.56.1 2.78 1.41 2.78 2.96 0 1.65-1.35 3-3 3z"/>
+              </svg>
+              AWS CLOUD
+            </a>
+
+            <a href="#demo" class="btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+              </svg>
+              LIVE STATUS
+            </a>
+
+            <a href="#analytics" class="btn-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+              PREDICTION
+            </a>
+          </div>
+
+          <!-- Hero Metrics Bar -->
+          <div class="hero-metrics-bar">
+            <div class="hero-metric-item">
+              <span class="hero-metric-val text-green" id="heroAvailable">37</span>
+              <span class="hero-metric-label">Slots Open Now</span>
+            </div>
+            <div class="hero-metric-item">
+              <span class="hero-metric-val text-cyan" id="heroOccupancy">63%</span>
+              <span class="hero-metric-label">Campus Occupancy</span>
+            </div>
+            <div class="hero-metric-item">
+              <span class="hero-metric-val text-gradient-amber">11.5m</span>
+              <span class="hero-metric-label">Avg Search Saved</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual: Animated Parking Lot Visualization -->
+        <div class="hero-visual-card">
+          <div class="hero-card-header">
+            <div class="hero-card-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-primary)" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="4"></rect>
+                <path d="M7 17V7h4a3 3 0 0 1 0 6H7"></path>
+              </svg>
+              <span>ZONE A — Engineering Lot</span>
+            </div>
+            <div class="live-indicator">
+              <span class="status-dot-pulse"></span>
+              <span>LIVE TELEMETRY</span>
+            </div>
+          </div>
+
+          <!-- Mini Lot Grid Visualization -->
+          <div id="heroMiniGrid" class="hero-mini-grid">
+            <!-- Dynamically populated via JS -->
+          </div>
+
+          <div class="hero-card-footer">
+            <div class="hero-legend">
+              <div class="legend-pill">
+                <span class="legend-box green"></span>
+                <span>Available (Outline)</span>
+              </div>
+              <div class="legend-pill">
+                <span class="legend-box orange"></span>
+                <span>Occupied (Filled)</span>
+              </div>
+            </div>
+            <span class="font-mono text-cyan">Click slots to toggle</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PROBLEM SECTION
+         ========================================================================== -->
+    <section id="problem" class="section-wrapper">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-eyebrow">The Challenge</span>
+          <h2 class="section-title">Parking is a visibility problem</h2>
+          <p class="section-subtitle">
+            The campus has capacity — but drivers lack timely information.
+          </p>
+        </div>
+
+        <!-- Three Problem Cards -->
+        <div class="problem-cards-grid">
+          
+          <!-- Card 1: SEARCH TIME -->
+          <div class="problem-card">
+            <div class="problem-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <span class="problem-stat">14.2 min</span>
+            <h3 class="problem-card-title">SEARCH TIME</h3>
+            <p class="problem-card-desc">
+              Drivers spend time circling when availability is unclear, creating stress, wasted fuel, and class delays.
+            </p>
+          </div>
+
+          <!-- Card 2: PEAK CONGESTION -->
+          <div class="problem-card">
+            <div class="problem-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+              </svg>
+            </div>
+            <span class="problem-stat">4:00 PM</span>
+            <h3 class="problem-card-title">PEAK CONGESTION</h3>
+            <p class="problem-card-desc">
+              Demand spikes create avoidable queues and internal traffic bottlenecks around central academic buildings.
+            </p>
+          </div>
+
+          <!-- Card 3: STALE INFORMATION -->
+          <div class="problem-card">
+            <div class="problem-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+              </svg>
+            </div>
+            <span class="problem-stat">0% Sync</span>
+            <h3 class="problem-card-title">STALE INFORMATION</h3>
+            <p class="problem-card-desc">
+              Static lists and manual signboards cannot reflect rapidly changing occupancy in dynamic university environments.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Core Insight Banner -->
+        <div class="core-insight-banner">
+          <div class="insight-icon-bubble" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+          </div>
+          <div class="insight-content">
+            <h4>Core Architectural Insight</h4>
+            <p>
+              "If availability is visible before the driver reaches the lot, unnecessary searching can be reduced."
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SOLUTION SECTION
+         ========================================================================== -->
+    <section id="solution" class="section-wrapper">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-eyebrow">The SKYSTACK Solution</span>
+          <h2 class="section-title">One dashboard. One source of truth.</h2>
+          <p class="section-subtitle">
+            A cloud-based campus parking control layer built for live status and demand signals.
+          </p>
+        </div>
+
+        <!-- Four Feature Cards -->
+        <div class="features-grid">
+          
+          <!-- Feature 1: LIVE MAP -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                <line x1="8" y1="2" x2="8" y2="18"></line>
+                <line x1="16" y1="6" x2="16" y2="22"></line>
+              </svg>
+            </div>
+            <span class="feature-tag">Visibility</span>
+            <h3 class="feature-title">LIVE MAP</h3>
+            <p class="feature-desc">
+              See available and occupied slots in seconds with interactive campus bay geometry and directional guidance.
+            </p>
+          </div>
+
+          <!-- Feature 2: SMART COUNTER -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="3" y1="9" x2="21" y2="9"></line>
+                <line x1="9" y1="21" x2="9" y2="9"></line>
+              </svg>
+            </div>
+            <span class="feature-tag">Capacity</span>
+            <h3 class="feature-title">SMART COUNTER</h3>
+            <p class="feature-desc">
+              Instant capacity and occupancy visibility across all campus sectors, updated millisecond-by-millisecond.
+            </p>
+          </div>
+
+          <!-- Feature 3: PEAK SIGNAL -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+            </div>
+            <span class="feature-tag">Intelligence</span>
+            <h3 class="feature-title">PEAK SIGNAL</h3>
+            <p class="feature-desc">
+              Surface likely shortage windows from historical patterns and proactively reroute traffic before lots bottleneck.
+            </p>
+          </div>
+
+          <!-- Feature 4: CLOUD CORE -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+              </svg>
+            </div>
+            <span class="feature-tag">Infrastructure</span>
+            <h3 class="feature-title">CLOUD CORE</h3>
+            <p class="feature-desc">
+              Centralized data that can scale across parking zones, multi-level garages, and satellite commuter lots seamlessly.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SYSTEM FLOW SECTION (AWS CLOUD ARCHITECTURE)
+         ========================================================================== -->
+    <section id="architecture" class="section-wrapper">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-eyebrow">Cloud Architecture</span>
+          <h2 class="section-title">From parking slot → cloud → decision</h2>
+          <p class="section-subtitle">
+            A simple architecture keeps the prototype feasible while leaving room to scale.
+          </p>
+        </div>
+
+        <div class="architecture-box">
+          
+          <!-- Architecture Controls Header -->
+          <div class="arch-controls">
+            <div class="arch-status">
+              <span class="status-dot-pulse"></span>
+              <span id="archStatusText">Cloud Pipeline IDLE • Waiting for next sensor event</span>
+            </div>
+
+            <button id="btnTriggerPipeline" class="arch-btn-trigger">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+              Simulate Slot Event Stream
+            </button>
+          </div>
+
+          <!-- Pipeline Stages Flow -->
+          <div class="pipeline-flow">
+            
+            <!-- STAGE 1: DATA IN -->
+            <div id="stage1" class="pipeline-stage">
+              <span class="stage-badge">STAGE 01</span>
+              <div class="stage-title">
+                <span>DATA IN</span>
+                <span class="aws-service-tag">IoT / Gateway</span>
+              </div>
+              <p class="stage-desc">
+                Parking slot sensors via IoT / Gateway detecting ultrasonic distance and vehicle magnetic flux.
+              </p>
+              <ul class="stage-specs">
+                <li>Ultrasonic Sensor Node (HC-SR04 / ESP32)</li>
+                <li>MQTT / HTTPS Ingestion Protocol</li>
+                <li>Battery & Solar Voltage Telemetry</li>
+              </ul>
+            </div>
+
+            <!-- Connector 1 -->
+            <div class="pipeline-connector">
+              <div class="connector-line">
+                <span id="pipelinePacket1" class="connector-packet"></span>
+              </div>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+
+            <!-- STAGE 2: PROCESS -->
+            <div id="stage2" class="pipeline-stage">
+              <span class="stage-badge">STAGE 02</span>
+              <div class="stage-title">
+                <span>PROCESS</span>
+                <span class="aws-service-tag">API Gateway + Lambda</span>
+              </div>
+              <p class="stage-desc">
+                Logic layer validating sensor signature, computing slot state deltas, and triggering broadcast events.
+              </p>
+              <ul class="stage-specs">
+                <li>Amazon API Gateway (REST / WebSocket)</li>
+                <li>AWS Lambda Event Handler (Python/Node)</li>
+                <li>State transition & debounce filter</li>
+              </ul>
+            </div>
+
+            <!-- Connector 2 -->
+            <div class="pipeline-connector">
+              <div class="connector-line">
+                <span id="pipelinePacket2" class="connector-packet"></span>
+              </div>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+
+            <!-- STAGE 3: DECISION OUT -->
+            <div id="stage3" class="pipeline-stage">
+              <span class="stage-badge">STAGE 03</span>
+              <div class="stage-title">
+                <span>DECISION OUT</span>
+                <span class="aws-service-tag">DynamoDB → Dashboard</span>
+              </div>
+              <p class="stage-desc">
+                DynamoDB stores time-series history + active state, streaming instant decisions to driver dashboards.
+              </p>
+              <ul class="stage-specs">
+                <li>Amazon DynamoDB (Current Occupancy Table)</li>
+                <li>Historical analytics & peak prediction model</li>
+                <li>Real-time Web App Dashboard (User view)</li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Telemetry Payload Inspector -->
+          <div class="telemetry-inspector">
+            <div class="inspector-header">
+              <span>Live AWS IoT Stream Inspector (Sample JSON Payload)</span>
+              <span class="font-mono text-cyan">REGION: us-east-1</span>
+            </div>
+            <pre id="archInspectorCode" class="json-stream-code">{
+  "eventVersion": "1.0",
+  "source": "skystack.sensor.iot",
+  "timestamp": "2026-09-18T01:15:00.000Z",
+  "detail": {
+    "sensorId": "SN-ESP32-A14",
+    "zone": "A",
+    "slotId": "A14",
+    "status": "OCCUPIED",
+    "confidence": 0.992,
+    "battery": "98.4%",
+    "latencyMs": 19.4
+  }
+}</pre>
+          </div>
+
+          <!-- Technical Note Requirement -->
+          <div class="arch-tech-note">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <span>
+              <strong>Technical note:</strong> AWS services named in the proposed architecture: <strong>API Gateway</strong>, <strong>Lambda</strong> and <strong>DynamoDB</strong>.
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PRODUCT DEMO SECTION (LIVE CAMPUS PARKING DASHBOARD)
+         ========================================================================== -->
+    <section id="demo" class="section-wrapper">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-eyebrow">Interactive Hackathon Prototype</span>
+          <h2 class="section-title">Live campus parking dashboard</h2>
+          <p class="section-subtitle">
+            Illustrative prototype interface — designed for a fast, visual final-round demo.
+          </p>
+        </div>
+
+        <div class="dashboard-container">
+          
+          <!-- Peak Alert Banner (Dynamic) -->
+          <div id="peakAlertBanner" class="peak-alert-banner">
+            <div class="peak-alert-content">
+              <span class="peak-badge">⚠️ PEAK ALERT 4 PM</span>
+              <span id="peakAlertText" class="peak-text">
+                PEAK ALERT 4 PM: Campus occupancy at 94% — High demand detected in Zone A & B. Recommend Zone C.
+              </span>
+            </div>
+            <span class="peak-action-text">Rerouting Drivers → Zone C</span>
+          </div>
+
+          <!-- Total Campus Metrics HUD -->
+          <!-- Requirement: TOTAL SLOTS: 100 | AVAILABLE: 37 (green) | OCCUPIED: 63 (orange) -->
+          <div class="dashboard-kpi-bar">
+            
+            <div class="kpi-card">
+              <div class="kpi-icon total">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                  <path d="M7 17V7h4a3 3 0 0 1 0 6H7"></path>
+                </svg>
+              </div>
+              <div class="kpi-info">
+                <span class="kpi-label">TOTAL SLOTS</span>
+                <span id="kpiTotal" class="kpi-val text-cyan">100</span>
+              </div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-icon available">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <div class="kpi-info">
+                <span class="kpi-label">AVAILABLE</span>
+                <span id="kpiAvailable" class="kpi-val text-green">37</span>
+              </div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-icon occupied">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="15" y1="9" x2="9" y2="15"></line>
+                  <line x1="9" y1="9" x2="15" y2="15"></line>
+                </svg>
+              </div>
+              <div class="kpi-info">
+                <span class="kpi-label">OCCUPIED</span>
+                <span id="kpiOccupied" class="kpi-val text-orange">63</span>
+              </div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-icon rate">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+              </div>
+              <div class="kpi-info">
+                <span class="kpi-label">OCCUPANCY RATE</span>
+                <span id="kpiRate" class="kpi-val" style="color: #c084fc;">63%</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Interactive Controls Toolbar -->
+          <div class="dashboard-toolbar">
+            
+            <div class="toolbar-left">
+              <!-- Zone Selector Dropdown -->
+              <div class="zone-select-wrapper">
+                <select id="zoneSelect" class="zone-select" aria-label="Select Parking Zone">
+                  <option value="A" selected>PARKING ZONE A (Engineering Block)</option>
+                  <option value="B">PARKING ZONE B (Main Quad & Library)</option>
+                  <option value="C">PARKING ZONE C (Student Center & Sports)</option>
+                  <option value="D">PARKING ZONE D (Admin & Faculty)</option>
+                </select>
+                <span class="zone-select-arrow">▼</span>
+              </div>
+
+              <!-- Filter Buttons -->
+              <div class="filter-btn-group">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="available">Available (Green)</button>
+                <button class="filter-btn" data-filter="occupied">Occupied (Orange)</button>
+                <button class="filter-btn" data-filter="ev">EV Charging ⚡</button>
+                <button class="filter-btn" data-filter="accessible">Accessible ♿</button>
+              </div>
+            </div>
+
+            <div class="toolbar-right">
+              <button id="btnSimEntry" class="sim-btn" title="Simulate vehicle arrival">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                + Car Entry
+              </button>
+              <button id="btnSimExit" class="sim-btn" title="Simulate vehicle departure">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                - Car Exit
+              </button>
+              <button id="btnAutoStream" class="sim-btn" title="Toggle automatic traffic simulation">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                Auto-Stream
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Time Scrubber / Predictive Hour Simulator -->
+          <div class="time-scrubber-bar">
+            <div class="time-scrubber-header">
+              <div class="scrubber-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-primary)" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Time-of-Day Demand Predictor (Simulate Campus Rush)</span>
+              </div>
+              <span id="scrubberTimeDisplay" class="scrubber-time-val">4:00 PM</span>
+            </div>
+            <input type="range" id="timeScrubber" class="slider-range-custom" min="8" max="20" step="1" value="16" aria-label="Simulate Time of Day">
+            <div class="slider-labels">
+              <span>8 AM (Morning Open)</span>
+              <span>11 AM</span>
+              <span>1 PM (Lunch)</span>
+              <span style="color: var(--amber-peak); font-weight: bold;">4 PM (PEAK RUSH)</span>
+              <span>6 PM</span>
+              <span>8 PM (Evening)</span>
+            </div>
+          </div>
+
+          <!-- Parking Bay Arena Grid -->
+          <div class="parking-bay-arena">
+            <div class="parking-lane-header">
+              <span id="activeZoneTitle" class="lane-label">ZONE A - Engineering Block (A01 - A30)</span>
+              <span class="font-mono text-muted text-xs">Hover or click slot for bay telemetry</span>
+            </div>
+            
+            <div id="parkingSlotsGrid" class="parking-slots-grid">
+              <!-- Dynamically populated via js/app.js -->
+            </div>
+          </div>
+
+          <!-- Legend & Telemetry Log Row -->
+          <div class="dashboard-bottom-row">
+            
+            <!-- Color Legend Requirement: GREEN = available, ORANGE = occupied -->
+            <div class="dashboard-legend-panel">
+              <div class="lane-label">COLOR LEGEND</div>
+              <div class="legend-items-list">
+                <div class="legend-chip">
+                  <span class="legend-dot green"></span>
+                  <span><strong>GREEN</strong> = Available Slot</span>
+                </div>
+                <div class="legend-chip">
+                  <span class="legend-dot orange"></span>
+                  <span><strong>ORANGE</strong> = Occupied Slot</span>
+                </div>
+                <div class="legend-chip">
+                  <span class="legend-dot blue"></span>
+                  <span>⚡ EV Station Equipped</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Live Telemetry Log Feed -->
+            <div class="live-telemetry-panel">
+              <div class="telemetry-log-title">
+                <span>Real-Time Sensor Edge Activity Feed</span>
+                <span class="text-cyan font-mono">AWS MQTT STREAM</span>
+              </div>
+              <div id="telemetryLogsContainer">
+                <div class="log-entry-item">
+                  <span class="log-timestamp">[01:16:42]</span>
+                  <span class="log-msg entry">● ENTRY</span>
+                  <span>Ultrasonic node detected car arrival at A14</span>
+                </div>
+                <div class="log-entry-item">
+                  <span class="log-timestamp">[01:15:18]</span>
+                  <span class="log-msg exit">● EXIT</span>
+                  <span>IR beam cleared: Vehicle departed from A09</span>
+                </div>
+                <div class="log-entry-item">
+                  <span class="log-timestamp">[01:14:02]</span>
+                  <span class="log-msg entry">● ENTRY</span>
+                  <span>EV fast charger engaged at A05</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PREDICTIVE ANALYTICS & CAMPUS IMPACT
+         ========================================================================== -->
+    <section id="analytics" class="section-wrapper">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-eyebrow">Peak-Hour Intelligence</span>
+          <h2 class="section-title">Measurable impact for smart campuses</h2>
+          <p class="section-subtitle">
+            Historical training on DynamoDB event streams powers predictive lot management.
+          </p>
+        </div>
+
+        <div class="impact-stats-grid">
+          
+          <div class="impact-card">
+            <span class="impact-val text-gradient-cyan">-82%</span>
+            <span class="impact-label">Cruising Time Reduced</span>
+            <span class="impact-sub">From 14.2 min to ~2.5 min per driver</span>
+          </div>
+
+          <div class="impact-card">
+            <span class="impact-val text-gradient-green">42.8 kg</span>
+            <span class="impact-label">Daily CO2 Offset</span>
+            <span class="impact-sub">Calculated across 1,200 campus commuters</span>
+          </div>
+
+          <div class="impact-card">
+            <span class="impact-val text-gradient-amber">99.4%</span>
+            <span class="impact-label">Slot State Accuracy</span>
+            <span class="impact-sub">Dual-verification sensor filter at edge</span>
+          </div>
+
+          <div class="impact-card">
+            <span class="impact-val text-cyan">&lt; 20ms</span>
+            <span class="impact-label">AWS Event Latency</span>
+            <span class="impact-sub">API Gateway to Dashboard sync latency</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         TEAM & HACKATHON SHOWCASE
+         ========================================================================== -->
+    <section id="team" class="section-wrapper">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-eyebrow">The Builders</span>
+          <h2 class="section-title">Meet the SKYSTACK Team</h2>
+          <p class="section-subtitle">
+            Cloud Wars University Hackathon — Final Round Finalists
+          </p>
+        </div>
+
+        <!-- Team Grid -->
+        <div class="team-grid">
+          
+          <!-- Member 1: Avikam Deol (Lead) -->
+          <div class="team-card lead-card">
+            <div class="team-avatar">AD</div>
+            <h3 class="team-name">Avikam Deol</h3>
+            <span class="team-role">Project Lead & Cloud Architect</span>
+            <p class="team-contribution">
+              System architecture, AWS serverless design, project orchestration, and hackathon presentation lead.
+            </p>
+          </div>
+
+          <!-- Member 2: Abhigyan Prakash Giri -->
+          <div class="team-card">
+            <div class="team-avatar">AG</div>
+            <h3 class="team-name">Abhigyan Prakash Giri</h3>
+            <span class="team-role">Backend & Cloud APIs</span>
+            <p class="team-contribution">
+              AWS API Gateway integration, Lambda microservice event processors, and DynamoDB data schema.
+            </p>
+          </div>
+
+          <!-- Member 3: Lakshay Bhati -->
+          <div class="team-card">
+            <div class="team-avatar">LB</div>
+            <h3 class="team-name">Lakshay Bhati</h3>
+            <span class="team-role">IoT & Edge Hardware</span>
+            <p class="team-contribution">
+              Ultrasonic/magnetic sensor node firmware, MQTT message serialization, and hardware testbed.
+            </p>
+          </div>
+
+          <!-- Member 4: Taru Prakash -->
+          <div class="team-card">
+            <div class="team-avatar">TP</div>
+            <h3 class="team-name">Taru Prakash</h3>
+            <span class="team-role">Frontend & UI/UX</span>
+            <p class="team-contribution">
+              Interactive dashboard interface, responsive styling, design system, and micro-interactions.
+            </p>
+          </div>
+
+          <!-- Member 5: Himanshu Yadav -->
+          <div class="team-card">
+            <div class="team-avatar">HY</div>
+            <h3 class="team-name">Himanshu Yadav</h3>
+            <span class="team-role">Data & Predictive Models</span>
+            <p class="team-contribution">
+              Peak congestion forecasting algorithms, demand curve simulations, and campus mobility analytics.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       SLOT DETAIL MODAL / DRAWER
+       ========================================================================== -->
+  <div id="slotModal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="modalBayId">
+    <div class="slot-modal-card">
+      <button id="modalCloseBtn" class="modal-close-btn" aria-label="Close modal">×</button>
+      
+      <div class="modal-header-bay">
+        <span id="modalBayStatus" class="modal-bay-badge available">AVAILABLE</span>
+        <div>
+          <h3 id="modalBayId" class="font-mono" style="font-size: 1.4rem;">SLOT A01</h3>
+          <span id="modalBayZone" class="text-muted text-xs">ZONE A - Engineering Block</span>
+        </div>
+      </div>
+
+      <div class="modal-info-list">
+        <div class="modal-info-row">
+          <span class="label">Vehicle Attached:</span>
+          <span id="modalBayVehicle" class="val">None (Ready for Parking)</span>
+        </div>
+        <div class="modal-info-row">
+          <span class="label">Occupancy Duration:</span>
+          <span id="modalBayDuration" class="val">0m (Vacant)</span>
+        </div>
+        <div class="modal-info-row">
+          <span class="label">Distance to Entrance:</span>
+          <span id="modalBayDistance" class="val">18 meters</span>
+        </div>
+        <div class="modal-info-row">
+          <span class="label">Sensor Node Health:</span>
+          <span id="modalBayBattery" class="val">98% (Solar Mesh)</span>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button id="modalBtnToggle" class="btn-primary" style="width: 100%; justify-content: center;">
+          Simulate Vehicle Parking
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       FOOTER SECTION
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <!-- Footer Call to Action -->
+      <div class="footer-cta-box">
+        <h2 class="footer-cta-title">Ready to simplify campus parking?</h2>
+        <p class="footer-cta-desc">
+          Experience how SKYSTACK combines cloud-native AWS architecture with low-cost edge sensing to solve university parking bottlenecks once and for all.
+        </p>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;">
+          <a href="#demo" class="btn-primary">Explore Live Dashboard</a>
+          <a href="#architecture" class="btn-aws">Inspect Cloud Pipeline</a>
+        </div>
+      </div>
+
+      <!-- Footer Meta Grid -->
+      <div class="footer-meta-grid">
+        
+        <div class="footer-brand">
+          <div class="brand-wrapper" style="margin-bottom: 12px;">
+            <div class="brand-icon" style="width: 34px; height: 34px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <rect x="3" y="3" width="18" height="18" rx="4"></rect>
+                <path d="M9 17V7h4a3 3 0 0 1 0 6H9"></path>
+              </svg>
+            </div>
+            <h3>SKYSTACK</h3>
+          </div>
+          <p class="footer-tagline">
+            Smart Parking — Real-time parking visibility + peak-hour intelligence for university campuses.
+          </p>
+          <span class="font-mono text-cyan" style="font-size: 0.78rem;">
+            Cloud Wars University Hackathon (Final Round)
+          </span>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#problem">The Problem</a></li>
+            <li><a href="#solution">The Solution</a></li>
+            <li><a href="#architecture">AWS Architecture</a></li>
+            <li><a href="#demo">Live Campus Dashboard</a></li>
+            <li><a href="#team">Team Contributors</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hackathon Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="https://github.com" target="_blank" rel="noopener">GitHub Repository</a></li>
+            <li><a href="#architecture">AWS Architecture Specs</a></li>
+            <li><a href="#analytics">Predictive Model Docs</a></li>
+            <li><a href="mailto:avikamdeol@example.com">Contact Team Lead (Avikam Deol)</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <span>© 2026 SKYSTACK Team. Designed for Cloud Wars University Hackathon.</span>
+        <span>Built with AWS API Gateway • Lambda • DynamoDB</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+</body>
+</html>
